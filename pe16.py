@@ -1,0 +1,1 @@
+sum(ord(i)-48 for i in list(str(2**10000)))
