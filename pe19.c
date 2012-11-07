@@ -36,17 +36,17 @@ main()
 	//	problem is asking for from 1901 to 2001. so should minus the addtional part.
 	y = 1900;
 	for (m=1; m < 13; m++)
+	{
+		if (m == 2)
+			monthDay = 28 + leap(y);
+		else
+			monthDay = M[m];
+		for (d=0; d < monthDay; d++)
 		{
-			if (m == 2)
-				monthDay = 28 + leap(y);
-			else
-				monthDay = M[m];
-			for (d=0; d < monthDay; d++)
-			{
-				if ((d == 0) && (week == 6))
-					ans --;
-				week = (week + 1) % 7;
-			}
+			if ((d == 0) && (week == 6))
+				ans --;
+			week = (week + 1) % 7;
 		}
+	}
 	printf("%d", ans);
 }
